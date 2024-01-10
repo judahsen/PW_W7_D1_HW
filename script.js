@@ -33,24 +33,24 @@ function replaceEvens(arr){
 
 
 // Codewars Problem 1
-// Create a function that takes 2 integers in form of a string as an input, and outputs the sum (also as a string):
-// Example: "4",  "5" --> "9"
+// In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+// Example: 1 -> -1  ,   -5 ->5
 
-function sumStr(a,b){
-    const num1 = a ? parseInt(a) : 0;
-    const num2 = b ? parseInt(b) : 0;
-
-    const result = num1 + num2;
-    const rtnStr = result.toString();
-    
-    return rtnStr;
-
+function makeNegative(number) {
+    if (number > 0) {
+        return -number;
+    } else {
+        return number;
+    }
 }
-console.log(sumStr(4,5))
+
+console.log(makeNegative(1));
+console.log(makeNegative(-5));
 
 
 // Codewras Problem 2
 // Make a function that will return a greeting statement that uses an input; your program should return, "Hello, <name> how are you doing today?".
+// Example: Name = Ryan -> Hello, Ryan how are you doing today?
 
 
 function greet(Name){
