@@ -3,17 +3,36 @@
 the list and checks that the current name is in the string passed in. The output should be:
 "Matched dog_name" if name is in the string, if no matches are present console.log "No Matches"
 */
-let dog_string = "Hello Max, my name is Dog, and I have purple eyes!"
-let dog_names = ["Max","HAS","PuRple","dog"]
 
-function findWords(){
+function findWords(inputString, dogNames) {
     //Your code goes here
+    let matches = [];
 
+    for (let i = 0; i < dogNames.length; i++) {
+        let currentDogName = dogNames[i];
+        
+        if (inputString.includes(currentDogName)) {
+            matches.push(`Matched ${currentDogName}`);
+        }
+    }
 
+    if (matches.length > 0) {
+        for (let match of matches) {
+            console.log(match);
+        }
+    } else {
+        console.log("No Matches");
+    }
 }
 
+
+let inputString = "I have a dog named Max and a cat named Whiskers.";
+let dogNames = ["Max", "Buddy", "Whiskers", "Charlie"];
+
+
+
 //Call method here with parameters
-console.log(findWords())
+console.log(findWords(inputString, dogNames));
 
 
 
@@ -23,9 +42,17 @@ and replaces it with the string "even index" */
 
 // Given arr == ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
 
-function replaceEvens(arr){
-    //code goes here
+function replaceEvens(arr) {
+    for (let i = 0; i < arr.length; i += 2) {
+        arr.splice(i, 1, "even index");
+    }
 }
+
+
+let arr = ["Max", "Baseball", "Reboot", "Goku", "Trucks", "Rodger"];
+replaceEvens(arr);
+console.log(arr);
+
 
 //Expected output
 //Given arr == ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
